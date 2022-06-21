@@ -20,7 +20,7 @@ class Graph {
 		this.edges = new Set();
 	}
 }
-// matrix[ from, to,边权 ]
+// matrix[ from, to, 边权 ]
 class createGraph {
 	constructor(matrix) {
 		var graph = new Graph();
