@@ -1,4 +1,4 @@
-class DisjointSets{
+export class DisjointSets{
   constructor(nodes){
     this.fatherMap = new Map()
     this.rankMap = new Map()
