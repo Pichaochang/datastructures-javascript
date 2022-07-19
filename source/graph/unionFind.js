@@ -14,7 +14,7 @@ export class DisjointSets{
   }
   find(node) {
     const faththNode = this.fatherMap.get(node)
-    if (faththNode != this.find(faththNode)) {
+    if (faththNode != node) {
       faththNode = this.find(faththNode)
     }
     this.fatherMap.set(node, faththNode)
@@ -40,5 +40,8 @@ export class DisjointSets{
         this.rankMap.set(firstNodeRank, firstNodeRank + secontNodeRank)
       }
     }
+  }
+  isSameSet(a,b) {
+    return this.find(a) === this.find(b)
   }
 }
