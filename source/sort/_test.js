@@ -16,6 +16,7 @@ export default function main(fn) {
   }
   console.log(succeed ? "Nice!" : "Fucking fucked!")
   const arr = generateRandomArray(maxSize, maxValue)
+  printArray(arr);
   fn(arr);
   printArray(arr);
 }
