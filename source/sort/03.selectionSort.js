@@ -4,9 +4,10 @@ import main from './_test.js'
 function selectionSort(arr) {
   const length = arr.length
   for (let i = 0; i < length; i++) {
-    for (let j = 0; j <= length - 1 - i; j++) {
-      if (arr[j] > arr[j+1]){
-        swap(arr, j, j+1)
+    let min = i
+    for (let j = i + 1; j < length; j++) {
+      if(arr[min] > arr[j]) {
+        swap(arr, min, j)
       }
     }
   }
@@ -17,5 +18,5 @@ function swap(arr, index1, index2) {
   arr[index2] = temp
 }
 // test code
-main(bubbleSort)
+main(selectionSort)
 

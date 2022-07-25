@@ -1,13 +1,13 @@
 // test 用计数器和比较器校验结果
-export default function main(fn) {
-  const testTime = 100;
+export default function main(fn, maxTime = 1000) {
+  const testTime = maxTime;
   const maxSize = 100;
   const maxValue = 100;
   let succeed = true;
   for (let i = 0; i < testTime; i++) {
     const arr1 = generateRandomArray(maxSize, maxValue);
     const arr2 = copyArray(arr1);
-    fn(arr1);
+    fn(arr1, 0, arr1.length - 1);
     comparator(arr2);
     if (!isEqual(arr1, arr2)) {
       succeed = false;
@@ -17,7 +17,7 @@ export default function main(fn) {
   console.log(succeed ? "Nice!" : "Fucking fucked!")
   const arr = generateRandomArray(maxSize, maxValue)
   printArray(arr);
-  fn(arr);
+  fn(arr, 0, arr.length - 1);
   printArray(arr);
 }
 function generateRandomArray(maxSize, maxValue) {

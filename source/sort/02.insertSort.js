@@ -1,21 +1,20 @@
-
-import main from './_test.js'
+import main from "./_test.js";
 // 冒泡排序
 function insertSort(arr) {
-  const length = arr.length
-  for (let i = 0; i < length; i++) {
-    for (let j = 0; j <= length - 1 - i; j++) {
-      if (arr[j] > arr[j+1]){
-        swap(arr, j, j+1)
-      }
+  if (arr.length < 2) {
+    return arr
+  }
+  const length = arr.length;
+  for (let i = 1; i < length; i++) {
+    for (let j = i - 1; j <= i && arr[j] > arr[j + 1]; j--) {
+      swap(arr, j, j + 1);
     }
   }
 }
 function swap(arr, index1, index2) {
-  const temp = arr[index1]
-  arr[index1] = arr[index2]
-  arr[index2] = temp
+  const temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
 }
 // test code
-main(bubbleSort)
-
+main(insertSort, 100000);
