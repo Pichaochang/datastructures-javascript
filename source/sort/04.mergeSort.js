@@ -1,11 +1,10 @@
 import main from "./_test.js";
 // 分而治之，将数组分若干组，将每个组进行排序
 var mergeSort = function (arr, left, right) {
-  if (left === right) {
+  if (left >= right ) {
     return false;
   }
-  console.log(left, right);
-  var mid = left + ((left - right) >> 1);
+  var mid = left + ((right - left) >> 1);
   mergeSort(arr, left, mid);
   mergeSort(arr, mid + 1, right);
   merge(arr, left, mid, right);
